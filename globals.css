@@ -1,0 +1,318 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 2%; /* Deep Black #030406 */
+    --foreground: 184 100% 95%;
+    --card: 240 10% 4%;
+    --card-foreground: 184 100% 95%;
+    --popover: 240 10% 2%;
+    --popover-foreground: 184 100% 95%;
+    --primary: 195 100% 50%; /* Solo Leveling Blue #00BFFF */
+    --primary-foreground: 220 33% 2%;
+    --secondary: 35 100% 50%; /* Fluorescent Orange #FFA500 */
+    --secondary-foreground: 184 100% 95%;
+    --muted: 240 10% 10%;
+    --muted-foreground: 196 40% 70%;
+    --accent: 0 100% 50%; /* Fluorescent Red #FF4500 */
+    --accent-foreground: 184 100% 95%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 184 100% 95%;
+    --border: 195 100% 30%;
+    --input: 240 10% 10%;
+    --ring: 195 100% 50%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground select-none overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, .font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.12em !important; 
+    font-variant-ligatures: none; 
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+/* SHADOW BACKGROUND MOTOR */
+.shadow-bg-main {
+  background: #030406;
+  background-image: 
+    radial-gradient(circle at 50% -20%, rgba(0, 191, 255, 0.15) 0%, transparent 70%),
+    radial-gradient(circle at 0% 100%, rgba(255, 69, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 100% 50%, rgba(255, 165, 0, 0.05) 0%, transparent 40%);
+}
+
+.shadow-panel {
+  background: rgba(4, 4, 15, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 191, 255, 0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 191, 255, 0.03);
+  @apply rounded-2xl;
+}
+
+/* RAID NEON PULSE - RED */
+.raid-neon-pulse {
+  position: relative;
+  @apply rounded-[2rem];
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3), inset 0 0 15px rgba(255, 0, 0, 0.1);
+  animation: raid-border-pulse 2.5s infinite ease-in-out;
+  background: rgba(12, 2, 2, 0.85);
+  backdrop-filter: blur(12px);
+  will-change: box-shadow, border-color;
+}
+
+@keyframes raid-border-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2), inset 0 0 10px rgba(255, 0, 0, 0.2);
+    border-color: rgba(255, 0, 0, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.7), 0 0 50px rgba(255, 0, 0, 0.4), inset 0 0 20px rgba(255, 0, 0, 0.4);
+    border-color: rgba(255, 0, 0, 0.8);
+  }
+}
+
+/* DUNGEON NEON PULSE - BLUE */
+.dungeon-neon-pulse {
+  position: relative;
+  @apply rounded-[2.5rem];
+  border: 2px solid rgba(0, 191, 255, 0.3);
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.3), inset 0 0 15px rgba(0, 191, 255, 0.1);
+  animation: dungeon-border-pulse 2.5s infinite ease-in-out;
+  background: rgba(4, 4, 15, 0.85);
+  backdrop-filter: blur(12px);
+  will-change: box-shadow, border-color;
+}
+
+@keyframes dungeon-border-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.4), 0 0 20px rgba(0, 191, 255, 0.2), inset 0 0 10px rgba(0, 191, 255, 0.2);
+    border-color: rgba(0, 191, 255, 0.3);
+  }
+  50% { 
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.7), 0 0 50px rgba(0, 191, 255, 0.4), inset 0 0 20px rgba(0, 191, 255, 0.4);
+    border-color: rgba(0, 191, 255, 0.8);
+  }
+}
+
+/* HOLOGRAPHIC EFFECTS - GPU Optimized */
+.holographic-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.05) 0%, rgba(20, 7, 31, 0.8) 50%, rgba(0, 191, 255, 0.05) 100%);
+  border: 1px solid rgba(0, 191, 255, 0.2);
+  transition: border-color 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.holographic-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 191, 255, 0.05) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 255, 0, 0.02)
+  );
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.holographic-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 191, 255, 0.1),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: holo-sweep 4s infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@keyframes holo-sweep {
+  0% { transform: translateX(0) skewX(-20deg); }
+  100% { transform: translateX(300%) skewX(-20deg); }
+}
+
+.aura-text-neon {
+  color: #00BFFF;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.6);
+}
+
+.aura-text-orange {
+  color: #FFA500;
+  text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+/* AVATAR SMOKE AURA v2 - GPU Optimized */
+@keyframes aura-rotate-vortex {
+  0% { transform: rotate(0deg) scale(1); opacity: 0.6; }
+  50% { transform: rotate(180deg) scale(1.1); opacity: 0.9; }
+  100% { transform: rotate(360deg) scale(1); opacity: 0.6; }
+}
+
+@keyframes smoke-flow {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.4; }
+  50% { transform: scale(1.2) rotate(120deg); opacity: 0.7; }
+  100% { transform: scale(1) rotate(360deg); opacity: 0.4; }
+}
+
+@keyframes smoke-drift {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate(8px, -8px) scale(1.15); opacity: 0.8; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+}
+
+.avatar-vortex-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  @apply mx-auto mb-6 flex items-center justify-center;
+  will-change: transform;
+}
+
+.avatar-vortex-aura {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 40%, rgba(0, 191, 255, 0.5) 60%, rgba(0, 191, 255, 0.1) 85%, transparent 100%);
+  filter: blur(20px);
+  animation: aura-rotate-vortex 12s infinite linear;
+  z-index: 0;
+  will-change: transform, opacity;
+}
+
+.avatar-vortex-aura::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, transparent, rgba(0, 191, 255, 0.3), transparent 45%, rgba(0, 191, 255, 0.5), transparent 75%);
+  filter: blur(25px);
+  animation: smoke-flow 9s infinite linear;
+  opacity: 0.6;
+  will-change: transform;
+}
+
+.avatar-vortex-aura::before {
+  content: '';
+  position: absolute;
+  inset: -15px;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 30%, rgba(0, 191, 255, 0.4) 50%, transparent 90%);
+  filter: blur(18px);
+  animation: smoke-drift 8s infinite ease-in-out;
+  opacity: 0.5;
+  will-change: transform, opacity;
+}
+
+.avatar-vortex-core {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  @apply bg-black border-2 border-primary/40 overflow-hidden flex items-center justify-center shadow-[0_0_40px_rgba(0,191,255,0.6)];
+}
+
+/* SMOKE PULSE FOR EVOLVE BUTTON */
+@keyframes smoke-pulse-aura {
+  0% { 
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4); 
+    transform: scale(1) translateY(0);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.6), 0 0 60px rgba(255, 69, 0, 0.2); 
+    transform: scale(1.05) translateY(-4px);
+  }
+  100% { 
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4); 
+    transform: scale(1) translateY(0);
+  }
+}
+
+.evolve-btn-active {
+  animation: smoke-pulse-aura 3s infinite ease-in-out;
+  will-change: transform, box-shadow;
+}
+
+/* HOLOGRAPHIC BLUE PARTICLES - GPU Optimized */
+@keyframes float-holographic {
+  0% { transform: translateY(110vh) translateX(0) scale(0); opacity: 0; }
+  25% { transform: translateY(80vh) translateX(15px) scale(1); opacity: 0.4; }
+  75% { transform: translateY(30vh) translateX(-15px) scale(1.1); opacity: 0.2; }
+  100% { transform: translateY(-10vh) translateX(0) scale(0); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(1.5px);
+  background: #00BFFF;
+  box-shadow: 0 0 12px rgba(0, 191, 255, 0.6);
+  animation: float-holographic linear infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 191, 255, 0.03);
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  animation: scanline-move 10s linear infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+.aura-progress-sweep::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.15), transparent);
+  animation: progress-sweep 3s infinite;
+  will-change: transform;
+}
+
+@keyframes progress-sweep {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(300%); }
+}
+
+::-webkit-scrollbar { display: none; }
