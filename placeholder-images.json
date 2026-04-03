@@ -1,0 +1,46 @@
+{
+  "placeholderImages": [
+    {
+      "id": "shadow-igris",
+      "description": "Igris, the Blood Red Knight sitting on a stone throne",
+      "imageUrl": "https://images.unsplash.com/photo-1698163515779-09914bf156af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzdXByZW1lJTIwc2hhZG93JTIwZ2VuZXJhbCUyMGFuaW1lfGVufDB8fHx8MTc3MTU4NzA3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "red knight anime throne"
+    },
+    {
+      "id": "hunter-arena",
+      "description": "Solo Leveling hunters epic battle scene background",
+      "imageUrl": "https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYXJrJTIwYW5pbWUlMjBiYXR0bGV8ZW58MHx8fHwxNzc0NDIzMTIzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dark anime battle"
+    },
+    {
+      "id": "shadow-tank",
+      "description": "Tank the ice bear shadow",
+      "imageUrl": "https://images.unsplash.com/photo-1514983085130-0c2505f79b53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxnaWFudCUyMGljZSideMGJlYXIlMjBtb25zdGVyfGVufDB8fHx8MTc3MTU4NzA3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "giant ice bear monster"
+    },
+    {
+      "id": "shadow-iron",
+      "description": "Iron the giant shadow warrior",
+      "imageUrl": "https://images.unsplash.com/photo-1708696917854-a20355fc7bb7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4&auto=format&fit=crop&q=80&w=1080",
+      "imageHint": "heavy armored knight anime"
+    },
+    {
+      "id": "shadow-kaisel",
+      "description": "Kaisel the shadow dragon",
+      "imageUrl": "https://images.unsplash.com/photo-1739055547896-87319a4d629f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxwdXJwbGUlMjBkcmFnb24lMjBzaGFkb3d8ZW58MHx8fHwxNzcxNTg3MDcyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "purple dragon shadow"
+    },
+    {
+      "id": "shadow-beru",
+      "description": "Beru the ant king shadow",
+      "imageUrl": "https://picsum.photos/seed/beru/400/500",
+      "imageHint": "ant king anime monster"
+    },
+    {
+      "id": "shadow-bellion",
+      "description": "Bellion the Grand Marshal shadow",
+      "imageUrl": "https://images.unsplash.com/photo-1626082896492-766af4eb6501?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkYXJrJTIwYW5pbWUlMjB3YXJyaW9yfGVufDB8fHx8MTc3MTU4NzA3Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "supreme shadow general anime"
+    }
+  ]
+}
