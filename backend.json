@@ -1,0 +1,101 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "UserProfile",
+      "type": "object",
+      "description": "Represents a hunter in the Solo Leveling System, storing their personal biometrics, game progression, and stat points.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the UserProfile entity (Firebase UID)."
+        },
+        "name": {
+          "type": "string",
+          "description": "The hunter's chosen name."
+        },
+        "email": {
+          "type": "string",
+          "description": "Hunter's contact email."
+        },
+        "age": {
+          "type": "number",
+          "description": "The hunter's age in years."
+        },
+        "weightKg": {
+          "type": "number",
+          "description": "The hunter's current weight in kilograms."
+        },
+        "heightCm": {
+          "type": "number",
+          "description": "The hunter's current height in centimeters."
+        },
+        "objective": {
+          "type": "string",
+          "description": "The hunter's main fitness goal."
+        },
+        "currentRank": {
+          "type": "string",
+          "description": "The hunter's current rank (E, D, C, B, B+, A, A+, S, MONARCH)."
+        },
+        "level": {
+          "type": "number",
+          "description": "The hunter's current level."
+        },
+        "xp": {
+          "type": "number",
+          "description": "The hunter's current experience points."
+        },
+        "coins": {
+          "type": "number",
+          "description": "Aura coins collected."
+        },
+        "streak": {
+          "type": "number",
+          "description": "Consecutive days of training."
+        },
+        "stats": {
+          "type": "object",
+          "properties": {
+            "str": { "type": "number" },
+            "agi": { "type": "number" },
+            "end": { "type": "number" },
+            "vit": { "type": "number" },
+            "foc": { "type": "number" },
+            "aur": { "type": "number" }
+          }
+        },
+        "profileImage": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name", "level", "xp", "currentRank"]
+    }
+  },
+  "auth": {
+    "providers": [
+      "google.com"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "UserProfile",
+          "schema": {
+            "$ref": "#/backend/entities/UserProfile"
+          },
+          "description": "Private hunter profile data. Accessible only by the owner.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "Firebase Authentication UID."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
